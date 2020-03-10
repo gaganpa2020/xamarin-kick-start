@@ -24,7 +24,7 @@ namespace SHABDKOSH.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel txtWord { get; set; }
+        UIKit.UITextField txtWord { get; set; }
 
         void ReleaseDesignerOutlets ()
         {
