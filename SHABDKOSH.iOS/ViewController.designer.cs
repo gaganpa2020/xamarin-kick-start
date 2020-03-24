@@ -26,6 +26,10 @@ namespace SHABDKOSH.iOS
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITextField txtWord { get; set; }
 
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UITextField txtWordMeaning { get; set; }
+
         void ReleaseDesignerOutlets ()
         {
             if (btnAddWord != null) {
@@ -41,6 +45,11 @@ namespace SHABDKOSH.iOS
             if (txtWord != null) {
                 txtWord.Dispose ();
                 txtWord = null;
+            }
+
+            if (txtWordMeaning != null) {
+                txtWordMeaning.Dispose ();
+                txtWordMeaning = null;
             }
         }
     }
