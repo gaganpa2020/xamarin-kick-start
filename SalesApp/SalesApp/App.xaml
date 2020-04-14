@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converters="clr-namespace:SalesApp.Converters;assembly=SalesApp" 
+             x:Class="SalesApp.App">
+    <Application.Resources>
+        <ResourceDictionary>
+
+            <!-- Application resource dictionary -->
+            <!-- COLORS -->
+            <Color x:Key="WhiteColor">#FFFFFF</Color>
+            <Color x:Key="PrimaryThemeColor">#384da1</Color>
+            <Color x:Key="ExtraLightGrayColor">#E8E8E8</Color>
+            <Color x:Key="LightGrayColor">#cccccc</Color>
+            <Color x:Key="MediumGrayColor">#C0C0C0</Color>
+            <Color x:Key="AlertColor">#FF6961</Color>
+
+            <!-- CONTROLS -->
+            <Style x:Key="PrimaryButtonStyle" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="{StaticResource PrimaryThemeColor}" />
+                <Setter Property="TextColor" Value="{StaticResource WhiteColor}" />
+            </Style>
+
+            <Style x:Key="DangerButtonStyle" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="Red" />
+                <Setter Property="TextColor" Value="{StaticResource WhiteColor}" />
+            </Style>
+
+            <Style x:Key="SuccessButtonStyle" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="MediumSeaGreen" />
+                <Setter Property="TextColor" Value="{StaticResource WhiteColor}" />
+            </Style>
+
+            <!-- CONVERTERS -->
+            <converters:ItemTappedEventArgsConverter x:Key="ItemTappedEventArgsConverter" />
+            <converters:TextChangedEventArgsConverter x:Key="TextChangedEventArgsConverter" />
+            <converters:StringNullOrEmptyBoolConverter x:Key="StringNullOrEmptyBoolConverter" />
+            <converters:CountToBoolConverter x:Key="CountToBoolConverter" />
+            <converters:InverseBoolConverter x:Key="InverseBoolConverter" />
+            <converters:MenuItemTypeConverter x:Key="MenuItemTypeConverter" />
+            <converters:ObjectNotNullBoolConverter x:Key="ObjectNotNullBoolConverter" />
+            <converters:InverseCountToBoolConverter x:Key="InverseCountToBoolConverter" />
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

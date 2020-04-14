@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="SalesApp.Views.AddressDetailView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:behaviors="clr-namespace:SalesApp.Behaviors;assembly=SalesApp"
+    xmlns:viewmodelbase="clr-namespace:SalesApp.ViewModels.Base;assembly=SalesApp"
+    Title="Address Data"
+    viewmodelbase:ViewModelLocator.AutoWireViewModel="true">
+
+    <ContentPage.Content>
+        <StackLayout Padding="20" Spacing="10">
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="AUTO" />
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <Label
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    FontAttributes="Bold"
+                    FontSize="Large"
+                    Text="{Binding Address.Address1}" />
+
+                <Label
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    FontSize="Medium"
+                    Text="{Binding Address.CityStateZip}" />
+
+                <Image
+                    Grid.Row="0"
+                    Grid.RowSpan="2"
+                    Grid.Column="1"
+                    HeightRequest="40"
+                    Source="more"
+                    WidthRequest="40">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding ShowAddressContextActionsCommand}" />
+                    </Image.GestureRecognizers>
+                </Image>
+            </Grid>
+
+            <Label FontSize="Medium" Text="{Binding Address.StatusDisplay}" />
+
+            <StackLayout HeightRequest="5" />
+
+            <Frame
+                Margin="2"
+                BackgroundColor="{StaticResource AlertColor}"
+                CornerRadius="3"
+                HorizontalOptions="CenterAndExpand"
+                IsVisible="{Binding AddressNote, Converter={StaticResource StringNullOrEmptyBoolConverter}}">
+                <Grid
+                    Margin="2"
+                    ColumnSpacing="20"
+                    VerticalOptions="Center">
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="40" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Image
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        HeightRequest="40"
+                        Source="alerticon.png"
+                        VerticalOptions="Center"
+                        WidthRequest="40" />
+                    <Label
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        FontAttributes="Bold"
+                        FontSize="Default"
+                        Text="{Binding AddressNote}"
+                        TextColor="White"
+                        VerticalOptions="Center" />
+                </Grid>
+            </Frame>
+
+
+            <StackLayout HeightRequest="5" />
+
+            <ListView
+                behaviors:ItemTappedCommandListView.ItemTappedCommand="{Binding InteractionSelectedCommand}"
+                HasUnevenRows="True"
+                HeightRequest="200"
+                HorizontalOptions="FillAndExpand"
+                IsRefreshing="{Binding IsBusy}"
+                ItemsSource="{Binding Interactions}"
+                VerticalOptions="FillAndExpand">
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout
+                                Margin="0,10,0,10"
+                                Padding="5"
+                                Spacing="5"
+                                VerticalOptions="CenterAndExpand">
+                                <Grid ColumnSpacing="10">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="AUTO" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="*" />
+                                    </Grid.RowDefinitions>
+
+                                    <Image
+                                        Grid.Row="0"
+                                        Grid.RowSpan="2"
+                                        Grid.Column="0"
+                                        HeightRequest="40"
+                                        Source="{Binding UserIconUrl}"
+                                        WidthRequest="40" />
+
+                                    <Label
+                                        Grid.Row="0"
+                                        Grid.Column="1"
+                                        FontSize="Medium"
+                                        Text="{Binding InteractionTimeDisplay}"
+                                        TextColor="{StaticResource PrimaryThemeColor}"
+                                        VerticalOptions="Center"
+                                        VerticalTextAlignment="Center" />
+                                    <Label
+                                        Grid.Row="1"
+                                        Grid.Column="1"
+                                        FontSize="Medium"
+                                        Text="{Binding InteractionTypeDisplay}"
+                                        TextColor="{StaticResource MediumGrayColor}"
+                                        VerticalOptions="Center"
+                                        VerticalTextAlignment="Center" />
+                                </Grid>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+
+            <Button
+                Command="{Binding GotoAddInteractionCommand}"
+                Style="{StaticResource PrimaryButtonStyle}"
+                Text="Add Data" />
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

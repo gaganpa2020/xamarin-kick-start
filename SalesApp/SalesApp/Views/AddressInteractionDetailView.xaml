@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    x:Class="SalesApp.Views.AddressInteractionDetailView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:viewmodelbase="clr-namespace:SalesApp.ViewModels.Base;assembly=SalesApp"
+    Title="Interaction Details"
+    viewmodelbase:ViewModelLocator.AutoWireViewModel="true">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Margin="20,0,0,0" Padding="20">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+
+                    <Label
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        FontAttributes="Bold"
+                        FontSize="Large"
+                        Text="{Binding Interaction.Address.Address1}" />
+
+                    <Label
+                        Grid.Row="1"
+                        Grid.Column="0"
+                        FontSize="Medium"
+                        Text="{Binding Interaction.Address.CityStateZip}" />
+                </Grid>
+
+                <StackLayout HeightRequest="5" />
+                <StackLayout BackgroundColor="Black" HeightRequest="2" />
+                <StackLayout HeightRequest="5" />
+
+                <Grid ColumnSpacing="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="AUTO" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Image
+                        Grid.Row="0"
+                        Grid.RowSpan="2"
+                        Grid.Column="0"
+                        HeightRequest="50"
+                        Source="{Binding Interaction.UserIconUrl}"
+                        WidthRequest="50" />
+
+                    <Label
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        FontAttributes="Bold"
+                        FontSize="Large"
+                        Text="Sales Person" />
+
+                    <Label
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        FontSize="Medium"
+                        Text="{Binding Interaction.User.FullName}" />
+                </Grid>
+
+                <StackLayout HeightRequest="5" />
+
+                <Label
+                    FontAttributes="Bold"
+                    FontSize="Medium"
+                    Text="Date and Time" />
+                <Label FontSize="Medium" Text="{Binding Interaction.InteractionTimeDisplay}" />
+
+                <StackLayout HeightRequest="5" />
+
+                <Label
+                    FontAttributes="Bold"
+                    FontSize="Medium"
+                    Text="Customer Status" />
+                <Label FontSize="Medium" Text="{Binding Interaction.InteractionTypeDisplay}" />
+
+                <StackLayout HeightRequest="5" />
+
+                <Label
+                    FontAttributes="Bold"
+                    FontSize="Medium"
+                    Text="Product" />
+                <Label FontSize="Medium" Text="{Binding Interaction.ProductDisplay}" />
+
+                <StackLayout HeightRequest="5" />
+
+                <Label
+                    FontAttributes="Bold"
+                    FontSize="Medium"
+                    Text="Notes" />
+                <Label FontSize="Medium" Text="{Binding Interaction.Notes}" />
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="SalesApp.Views.NoNetworkView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <ContentPage.Content>
+        <ScrollView HorizontalOptions="CenterAndExpand">
+            <StackLayout
+                Padding="20"
+                HorizontalOptions="CenterAndExpand"
+                Spacing="10">
+                <StackLayout HeightRequest="40" />
+
+                <Label
+                    FontAttributes="Bold"
+                    FontSize="Large"
+                    HorizontalTextAlignment="Center"
+                    Text="No network connection" />
+
+                <StackLayout HeightRequest="10" />
+
+                <Label
+                    FontSize="Medium"
+                    HorizontalTextAlignment="Center"
+                    Text="You must be connected to the internet to use the Sales App" />
+
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

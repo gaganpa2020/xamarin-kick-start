@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage
+    x:Class="SalesApp.Views.MainView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:pages="clr-namespace:SalesApp.Views"
+    xmlns:viewModelBase="clr-namespace:SalesApp.ViewModels.Base;assembly=SalesApp"
+    viewModelBase:ViewModelLocator.AutoWireViewModel="true"
+    IsPresentedChanged="MainView_OnIsPresentedChanged"
+    MasterBehavior="Default">
+    <MasterDetailPage.Master>
+        <pages:MenuView x:Name="MasterPage" />
+    </MasterDetailPage.Master>
+    <MasterDetailPage.Detail>
+        <NavigationPage>
+            <x:Arguments>
+                <pages:DashboardView />
+            </x:Arguments>
+        </NavigationPage>
+    </MasterDetailPage.Detail>
+</MasterDetailPage>

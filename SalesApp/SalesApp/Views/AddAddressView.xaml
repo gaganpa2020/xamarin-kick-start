@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    x:Class="SalesApp.Views.AddAddressView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:viewmodelbase="clr-namespace:SalesApp.ViewModels.Base;assembly=SalesApp"
+    Title="Add Address"
+    viewmodelbase:ViewModelLocator.AutoWireViewModel="true">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="10" Spacing="10">
+                <Entry Placeholder="House/Street" Text="{Binding Address.Address1}" />
+                <Entry Placeholder="Apartment/Unit #" Text="{Binding Address.Address2}" />
+                <Entry Placeholder="City" Text="{Binding Address.City}" />
+                <Entry Placeholder="State" Text="{Binding Address.Province}" />
+                <Entry Placeholder="Zip" Text="{Binding Address.PostalCode}" />
+
+                <Button
+                    Command="{Binding ValidateAddressCommand}"
+                    IsVisible="{Binding AddressValidated, Converter={StaticResource InverseBoolConverter}}"
+                    Style="{StaticResource PrimaryButtonStyle}"
+                    Text="Validate" />
+
+                <Button
+                    Command="{Binding SaveAddressCommand}"
+                    IsVisible="{Binding AddressValidated}"
+                    Style="{StaticResource PrimaryButtonStyle}"
+                    Text="Save" />
+
+                <ActivityIndicator
+                    IsEnabled="True"
+                    IsRunning="True"
+                    IsVisible="{Binding IsBusy}" />
+
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

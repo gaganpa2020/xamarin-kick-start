@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="SalesApp.Views.SalesManagementView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:base="clr-namespace:SalesApp.ViewModels.Base;assembly=SalesApp"
+    xmlns:behaviors="clr-namespace:SalesApp.Behaviors;assembly=SalesApp"
+    Title="Address Management"
+    base:ViewModelLocator.AutoWireViewModel="true">
+
+    <ContentPage.Content>
+        <StackLayout Spacing="10">
+            <SearchBar
+                Placeholder="Search address"
+                SearchCommand="{Binding SearchCommand}"
+                Text="{Binding SearchText}" />
+
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <StackLayout Grid.Row="0" Grid.Column="0">
+                    <Label
+                        FontAttributes="Bold"
+                        FontSize="Medium"
+                        HorizontalOptions="Center"
+                        HorizontalTextAlignment="Center"
+                        Text="{Binding Header}" />
+
+                    <ListView
+                        behaviors:ItemTappedCommandListView.ItemTappedCommand="{Binding AddressSelectedCommand}"
+                        HasUnevenRows="True"
+                        HeightRequest="9999"
+                        HorizontalOptions="FillAndExpand"
+                        IsRefreshing="{Binding IsBusy}"
+                        IsVisible="{Binding NoData, Converter={StaticResource InverseBoolConverter}}"
+                        ItemsSource="{Binding Addresses}"
+                        VerticalOptions="FillAndExpand">
+
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Grid Margin="0,5,0,5">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="*" />
+                                            <RowDefinition Height="*" />
+                                        </Grid.RowDefinitions>
+
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="AUTO" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="AUTO" />
+                                        </Grid.ColumnDefinitions>
+
+                                        <Label
+                                            Grid.Row="0"
+                                            Grid.Column="0"
+                                            Margin="20,0,0,0"
+                                            FontSize="Medium"
+                                            Text="{Binding Address1}"
+                                            TextColor="{StaticResource PrimaryThemeColor}"
+                                            VerticalOptions="Center"
+                                            VerticalTextAlignment="Center" />
+                                        <Label
+                                            Grid.Row="1"
+                                            Grid.Column="0"
+                                            Margin="20,0,0,0"
+                                            FontSize="Small"
+                                            Text="{Binding LastInteraction}"
+                                            TextColor="{StaticResource MediumGrayColor}"
+                                            VerticalOptions="Center"
+                                            VerticalTextAlignment="Center" />
+
+                                        <Image
+                                            Grid.Row="0"
+                                            Grid.RowSpan="2"
+                                            Grid.Column="2"
+                                            Margin="0,0,20,0"
+                                            IsVisible="{Binding ShowAlert}"
+                                            Source="{Binding AlertIcon}" />
+                                    </Grid>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+
+                    <Label
+                        FontSize="Medium"
+                        HorizontalTextAlignment="Center"
+                        IsVisible="{Binding NoData}"
+                        Text="No data to display"
+                        TextColor="{StaticResource MediumGrayColor}" />
+                </StackLayout>
+
+                <StackLayout
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Padding="10"
+                    BackgroundColor="White"
+                    IsVisible="{Binding ShowSearchResults}"
+                    Spacing="10">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+
+                        <Button
+                            Grid.Column="0"
+                            Command="{Binding CancelSearchCommand}"
+                            Style="{StaticResource DangerButtonStyle}"
+                            Text="Cancel" />
+
+                        <Button
+                            Grid.Column="1"
+                            Command="{Binding AddAddressCommand}"
+                            Style="{StaticResource SuccessButtonStyle}"
+                            Text="Add New Address" />
+                    </Grid>
+
+                    <ListView
+                        behaviors:ItemTappedCommandListView.ItemTappedCommand="{Binding AddressSelectedCommand}"
+                        HasUnevenRows="True"
+                        HorizontalOptions="FillAndExpand"
+                        IsRefreshing="{Binding IsBusy}"
+                        ItemsSource="{Binding AddressSearchResults}"
+                        VerticalOptions="FillAndExpand">
+
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <StackLayout
+                                        Padding="10"
+                                        Spacing="10"
+                                        VerticalOptions="CenterAndExpand">
+
+                                        <Label
+                                            FontSize="Medium"
+                                            Text="{Binding AddressDisplay}"
+                                            VerticalOptions="Center"
+                                            VerticalTextAlignment="Center" />
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+
+                </StackLayout>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
