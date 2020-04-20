@@ -20,10 +20,13 @@ namespace ShabdkoshApp
 		{
 			InitializeComponent();
 
-			if (UseMockDataStore)
-				DependencyService.Register<MockDataStore>();
-			else
-				DependencyService.Register<AzureDataStore>();
+			//if (UseMockDataStore)
+			//	DependencyService.Register<MockDataStore>();
+			//else
+			//	DependencyService.Register<AzureDataStore>();
+						
+			DependencyService.Register<WordDataStore>();
+
 			MainPage = new MainPage();
 		}
 

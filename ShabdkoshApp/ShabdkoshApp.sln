@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShabdkoshApp.iOS", "Shabdko
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShabdkoshApp", "ShabdkoshApp\ShabdkoshApp.csproj", "{69CC3932-B21D-462E-AA09-CBEC17E64E77}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shabdkosh.API", "Shabdkosh.API\Shabdkosh.API.csproj", "{3870A6E7-48E2-41FE-A704-6DA87BFE57A5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -73,6 +75,18 @@ Global
 		{69CC3932-B21D-462E-AA09-CBEC17E64E77}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
 		{69CC3932-B21D-462E-AA09-CBEC17E64E77}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 		{69CC3932-B21D-462E-AA09-CBEC17E64E77}.Release|iPhoneSimulator.Deploy.0 = Release|Any CPU
+		{3870A6E7-48E2-41FE-A704-6DA87BFE57A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3870A6E7-48E2-41FE-A704-6DA87BFE57A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3870A6E7-48E2-41FE-A704-6DA87BFE57A5}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{3870A6E7-48E2-41FE-A704-6DA87BFE57A5}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{3870A6E7-48E2-41FE-A704-6DA87BFE57A5}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{3870A6E7-48E2-41FE-A704-6DA87BFE57A5}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{3870A6E7-48E2-41FE-A704-6DA87BFE57A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3870A6E7-48E2-41FE-A704-6DA87BFE57A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3870A6E7-48E2-41FE-A704-6DA87BFE57A5}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{3870A6E7-48E2-41FE-A704-6DA87BFE57A5}.Release|iPhone.Build.0 = Release|Any CPU
+		{3870A6E7-48E2-41FE-A704-6DA87BFE57A5}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{3870A6E7-48E2-41FE-A704-6DA87BFE57A5}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
