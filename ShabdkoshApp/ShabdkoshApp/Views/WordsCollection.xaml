@@ -13,7 +13,8 @@
                     HasUnevenRows="true"
                     RefreshCommand="{Binding LoadWordItemsCommand}"
                     IsPullToRefreshEnabled="true"
-                    CachingStrategy="RecycleElement">       
+                    CachingStrategy="RecycleElement"
+                    ItemSelected="OnItemSelected">       
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>

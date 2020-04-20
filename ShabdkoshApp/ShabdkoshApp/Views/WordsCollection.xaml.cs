@@ -1,4 +1,5 @@
-﻿using ShabdkoshApp.ViewModels;
+﻿using ShabdkoshApp.Models;
+using ShabdkoshApp.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,6 +28,16 @@ namespace ShabdkoshApp.Views
 			{
 				wordsCollectionViewModel.LoadWordItemsCommand.Execute(null);
 			}
+		}
+
+		void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
+		{
+			WordItem word = args.SelectedItem as WordItem;
+			if (word == null)
+				return;
+
+			Navigation.PushAsync(new WordDetailPage(new WordDetailsViewModel(word)), true);
+			lstWords.SelectedItem = null;
 		}
 	}
 }
