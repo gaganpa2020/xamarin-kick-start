@@ -7,7 +7,8 @@ namespace ShabdkoshApp1._0.Models
 	public enum MenuItemType
 	{
 		Browse,
-		About
+		About,
+		Settings
 	}
 	public class HomeMenuItem
 	{
