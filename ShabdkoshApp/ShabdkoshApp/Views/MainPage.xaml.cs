@@ -33,6 +33,9 @@ namespace ShabdkoshApp.Views
 					case (int)MenuItemType.Browse:
 						MenuPages.Add(id, new NavigationPage(new WordsCollection()));
 						break;
+					case (int)MenuItemType.Settings:
+						MenuPages.Add(id, new NavigationPage(new Settings()));
+						break;
 					case (int)MenuItemType.About:
 						MenuPages.Add(id, new NavigationPage(new AboutPage()));
 						break;
