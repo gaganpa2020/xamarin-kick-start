@@ -7,11 +7,10 @@
              x:Class="ShabdkoshApp1._0.Views.AboutPage"
              xmlns:vm="clr-namespace:ShabdkoshApp1._0.ViewModels"
              Title="{Binding Title}">
-    
     <ContentPage.BindingContext>
         <vm:AboutViewModel />
     </ContentPage.BindingContext>
-    
+
     <ContentPage.Resources>
         <ResourceDictionary>
             <Color x:Key="Primary">#2196F3</Color>
@@ -28,7 +27,7 @@
         <StackLayout BackgroundColor="{StaticResource Accent}" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
             <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
                 <ContentView Padding="0,40,0,40" VerticalOptions="FillAndExpand">
-                    <Image Source="xamarin_logo.png" VerticalOptions="Center" HeightRequest="64" />
+                    <Image Source="shabdkosh_logo.png" VerticalOptions="Center" HeightRequest="64" />
                 </ContentView>
             </StackLayout>
         </StackLayout>
@@ -38,7 +37,7 @@
                     <Label.FormattedText>
                         <FormattedString>
                             <FormattedString.Spans>
-                                <Span Text="AppName" FontAttributes="Bold" FontSize="22" />
+                                <Span Text="Shabdkosh" FontAttributes="Bold" FontSize="22" />
                                 <Span Text=" " />
                                 <Span Text="1.0" ForegroundColor="{StaticResource LightTextColor}" />
                             </FormattedString.Spans>
@@ -49,9 +48,9 @@
                     <Label.FormattedText>
                         <FormattedString>
                             <FormattedString.Spans>
-                                <Span Text="This app is written in C# and native APIs using the" />
+                                <Span Text="This app is written to help people with memorizing words for" />
                                 <Span Text=" " />
-                                <Span Text="Xamarin Platform" FontAttributes="Bold" />
+                                <Span Text="Educational purpose" FontAttributes="Bold" />
                                 <Span Text="." />
                             </FormattedString.Spans>
                         </FormattedString>
@@ -61,11 +60,11 @@
                     <Label.FormattedText>
                         <FormattedString>
                             <FormattedString.Spans>
-                                <Span Text="It shares code with its" />
+                                <Span Text="It version are avaiable over" />
                                 <Span Text=" " />
-                                <Span Text="iOS, Android, and Windows" FontAttributes="Bold" />
+                                <Span Text="iOS and Android" FontAttributes="Bold" />
                                 <Span Text=" " />
-                                <Span Text="versions." />
+                                <Span Text="platform." />
                             </FormattedString.Spans>
                         </FormattedString>
                     </Label.FormattedText>
@@ -77,5 +76,4 @@
             </StackLayout>
         </ScrollView>
     </Grid>
-    
 </ContentPage>

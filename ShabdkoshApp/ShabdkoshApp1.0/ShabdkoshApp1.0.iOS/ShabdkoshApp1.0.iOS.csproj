@@ -143,4 +143,13 @@
       <Name>ShabdkoshApp1.0</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\shabdkosh_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\shabdkosh_logo%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\shabdkosh_logo%403x.png" />
+  </ItemGroup>
 </Project>
