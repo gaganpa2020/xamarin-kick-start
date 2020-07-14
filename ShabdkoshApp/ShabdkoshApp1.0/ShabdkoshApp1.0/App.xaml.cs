@@ -4,6 +4,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using ShabdkoshApp1._0.Services;
 using ShabdkoshApp1._0.Views;
+using System.IO;
 
 namespace ShabdkoshApp1._0
 {
@@ -16,14 +17,29 @@ namespace ShabdkoshApp1._0
 			DeviceInfo.Platform == DevicePlatform.Android ? "http://10.0.2.2:5000" : "http://localhost:5000";
 		public static bool UseMockDataStore = true;
 
+		static SqliteDataStore database;
+
+		public static SqliteDataStore Database
+		{
+			get
+			{
+				if (database == null)
+				{
+					database = new SqliteDataStore(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Notes.db3"));
+				}
+				return database;
+			}
+		}
+
 		public App()
 		{
 			InitializeComponent();
 
-			if (UseMockDataStore)
-				DependencyService.Register<MockDataStore>();
-			else
-				DependencyService.Register<AzureDataStore>();
+			//if (UseMockDataStore)
+			//	DependencyService.Register<MockDataStore>();
+			//else
+			//	DependencyService.Register<AzureDataStore>();
+
 			MainPage = new MainPage();
 		}
 

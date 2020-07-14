@@ -12,7 +12,7 @@ namespace ShabdkoshApp1._0.ViewModels
 {
 	public class BaseViewModel : INotifyPropertyChanged
 	{
-		public IDataStore<Item> DataStore => DependencyService.Get<IDataStore<Item>>();
+		public IDataStore<Item> DataStore => App.Database;
 
 		bool isBusy = false;
 		public bool IsBusy
