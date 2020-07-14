@@ -4,16 +4,13 @@
             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
             mc:Ignorable="d"
-            xmlns:views="clr-namespace:ShabdkoshApp.Views"
-            x:Class="ShabdkoshApp.Views.MainPage">
+            xmlns:views="clr-namespace:ShabdkoshApp1._0.Views"
+            x:Class="ShabdkoshApp1._0.Views.MainPage">
 
     <MasterDetailPage.Master>
         <views:MenuPage />
     </MasterDetailPage.Master>
-    <MasterDetailPage.ToolbarItems>
-        <ToolbarItem Text="Add Word"
-                     Clicked="OnNoteAddedClicked"/>
-    </MasterDetailPage.ToolbarItems>
+
     <MasterDetailPage.Detail>
         <NavigationPage>
             <NavigationPage.Icon>
@@ -21,9 +18,8 @@
                     <On Platform="iOS" Value="tab_feed.png"/>
                 </OnPlatform>
             </NavigationPage.Icon>
-           
             <x:Arguments>
-                <views:WordsCollection />
+                <views:ItemsPage />
             </x:Arguments>
         </NavigationPage>
     </MasterDetailPage.Detail>

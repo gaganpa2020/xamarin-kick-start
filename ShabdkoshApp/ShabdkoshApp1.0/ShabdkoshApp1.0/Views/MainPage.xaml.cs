@@ -5,10 +5,9 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-using ShabdkoshApp.Models;
-using ShabdkoshApp.ViewModels;
+using ShabdkoshApp1._0.Models;
 
-namespace ShabdkoshApp.Views
+namespace ShabdkoshApp1._0.Views
 {
 	// Learn more about making custom code visible in the Xamarin.Forms previewer
 	// by visiting https://aka.ms/xamarinforms-previewer
@@ -32,10 +31,7 @@ namespace ShabdkoshApp.Views
 				switch (id)
 				{
 					case (int)MenuItemType.Browse:
-						MenuPages.Add(id, new NavigationPage(new WordsCollection()));
-						break;
-					case (int)MenuItemType.Settings:
-						MenuPages.Add(id, new NavigationPage(new Settings()));
+						MenuPages.Add(id, new NavigationPage(new ItemsPage()));
 						break;
 					case (int)MenuItemType.About:
 						MenuPages.Add(id, new NavigationPage(new AboutPage()));
@@ -54,11 +50,6 @@ namespace ShabdkoshApp.Views
 
 				IsPresented = false;
 			}
-		}
-
-		public async void OnNoteAddedClicked(object sender, EventArgs e)
-		{
-			await Navigation.PushAsync(new WordDetailPage(new WordDetailsViewModel(new WordItem())));
 		}
 	}
 }
