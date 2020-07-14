@@ -28,8 +28,8 @@ namespace ShabdkoshApp1._0.Views
 
 			var item = new Item
 			{
-				Text = "Item 1",
-				Description = "This is an item description."
+				Text = "",
+				Description = ""
 			};
 
 			viewModel = new ItemDetailViewModel(item);

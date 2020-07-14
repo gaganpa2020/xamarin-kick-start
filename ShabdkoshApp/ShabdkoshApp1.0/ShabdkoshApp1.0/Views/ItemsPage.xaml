@@ -40,7 +40,9 @@
                                 d:Text="{Binding .}"
                                 LineBreakMode="NoWrap" 
                                 Style="{DynamicResource ListItemTextStyle}" 
-                                FontSize="18"  />
+                                FontSize="18" 
+                                FontAttributes="Bold"/>
+                            
                             <Label Text="{Binding Description}" 
                                 d:Text="Item descripton"
                                 LineBreakMode="NoWrap"

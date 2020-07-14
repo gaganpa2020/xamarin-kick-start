@@ -27,7 +27,12 @@
         <StackLayout BackgroundColor="{StaticResource Accent}" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
             <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
                 <ContentView Padding="0,40,0,40" VerticalOptions="FillAndExpand">
-                    <Image Source="shabdkosh_logo.png" VerticalOptions="Center" HeightRequest="64" />
+                    <Label Text="Shabdkosh" 
+                                LineBreakMode="NoWrap" 
+                                Style="{DynamicResource ListItemTextStyle}" 
+                                FontSize="40" 
+                                FontAttributes="Bold"
+                                />
                 </ContentView>
             </StackLayout>
         </StackLayout>
