@@ -17,7 +17,7 @@ namespace ShabdkoshApp1._0.ViewModels
 
 		public ItemsViewModel()
 		{
-			Title = "Browse";
+			Title = "Words Collection";
 			Items = new ObservableCollection<Item>();
 			LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
 

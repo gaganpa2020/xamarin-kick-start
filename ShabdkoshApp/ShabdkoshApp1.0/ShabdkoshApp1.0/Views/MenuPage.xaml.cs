@@ -20,7 +20,7 @@ namespace ShabdkoshApp1._0.Views
 
 			menuItems = new List<HomeMenuItem>
 			{
-				new HomeMenuItem {Id = MenuItemType.Browse, Title="Browse" },
+				new HomeMenuItem {Id = MenuItemType.Browse, Title="Words" },
 				new HomeMenuItem {Id = MenuItemType.Settings, Title="Settings" },
 				new HomeMenuItem {Id = MenuItemType.About, Title="About" }
 			};

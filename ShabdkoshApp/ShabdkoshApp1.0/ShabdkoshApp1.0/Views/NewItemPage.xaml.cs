@@ -21,8 +21,8 @@ namespace ShabdkoshApp1._0.Views
 
 			Item = new Item
 			{
-				Text = "Item name",
-				Description = "This is an item description."
+				Text = "Word",
+				Description = "This is the word description."
 			};
 
 			BindingContext = this;
