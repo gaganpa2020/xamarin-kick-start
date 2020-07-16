@@ -5,6 +5,7 @@ using Xamarin.Forms.Xaml;
 using ShabdkoshApp1._0.Services;
 using ShabdkoshApp1._0.Views;
 using System.IO;
+using ShabdkoshApp1._0.Contracts;
 
 namespace ShabdkoshApp1._0
 {
@@ -39,6 +40,10 @@ namespace ShabdkoshApp1._0
 			//	DependencyService.Register<MockDataStore>();
 			//else
 			//	DependencyService.Register<AzureDataStore>();
+
+			// use the dependency service to get a platform-specific implementation and initialize it
+			
+			DependencyService.Get<INotificationManager>().Initialize();
 
 			MainPage = new MainPage();
 		}

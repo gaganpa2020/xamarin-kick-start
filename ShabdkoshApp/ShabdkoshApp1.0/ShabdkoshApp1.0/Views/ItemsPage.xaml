@@ -12,7 +12,7 @@
         <ToolbarItem Text="Add" Clicked="AddItem_Clicked" />
     </ContentPage.ToolbarItems>
 
-    <StackLayout>
+    <StackLayout  x:Name="stackLayout">
         <ListView x:Name="ItemsListView"
                 ItemsSource="{Binding Items}"
                 VerticalOptions="FillAndExpand"
@@ -53,6 +53,16 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+
+        <Label Text="Click the button to create a local notification."
+           TextColor="Red"
+           HorizontalOptions="Center"
+           VerticalOptions="Start" />
+        <Button Text="Create Notification"
+            HorizontalOptions="Center"
+            VerticalOptions="Start"
+            Clicked="OnScheduleClick"/>
+        
     </StackLayout>
     
 </ContentPage>
