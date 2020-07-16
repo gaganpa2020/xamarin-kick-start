@@ -6,7 +6,7 @@ namespace ShabdkoshApp1._0.Models
 	public class Item
 	{
 		[PrimaryKey, AutoIncrement]
-		public string Id { get; set; }
+		public int Id { get; set; }
 		public string Text { get; set; }
 		public string Description { get; set; }
 	}

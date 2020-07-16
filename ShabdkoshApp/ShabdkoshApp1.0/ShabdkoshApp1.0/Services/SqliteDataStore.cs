@@ -31,13 +31,13 @@
 			return deleteResult;
 		}
 
-		public async Task<bool> DeleteItemAsync(string id)
+		public async Task<bool> DeleteItemAsync(int id)
 		{
 			var oldItem = await GetItemAsync(id);
 			return await _database.DeleteAsync(oldItem) > 0 ? true : false;
 		}
 
-		public async Task<Item> GetItemAsync(string id)
+		public async Task<Item> GetItemAsync(int id)
 		{
 			return await _database.Table<Item>().FirstOrDefaultAsync(x => x.Id == id);
 		}
